@@ -3,6 +3,7 @@ ej.base.enableRipple(true);
 ej.diagrams.Diagram.Inject(ej.diagrams.DataBinding, ej.diagrams.MindMap, ej.diagrams.HierarchicalTree);
 var diagram;
 
+var current_text = "orans da bomb"
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__; var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         /* jshint proto: true */
@@ -129,7 +130,7 @@ function addNode(title) {
     var obj = {};
     obj.id = ej.diagrams.randomId();
     obj.data = {};
-    obj.data.Label = "Node";
+    obj.data.Label = title//"Node";
     return obj;
 }
 function addConnector(source, target) {
@@ -167,7 +168,7 @@ var LeftExtendTool = (function (_super) {
             var selectedElement = this.commandHandler.getSelectedObject();
             if (selectedElement[0]) {
                 if (selectedElement[0] instanceof ej.diagrams.Node) {
-                    var node = addNode();
+                    var node = addNode(current_text);
                     if (selectedElement[0].data.branch === 'Root') {
                         node.data.branch = 'Right';
                     }
@@ -203,7 +204,7 @@ var RightExtendTool = (function (_super) {
             var selectedObject = this.commandHandler.getSelectedObject();
             if (selectedObject[0]) {
                 if (selectedObject[0] instanceof ej.diagrams.Node) {
-                    var node = addNode();
+                    var node = addNode(current_text);
                     if (selectedObject[0].data.branch === 'Root') {
                         node.data.branch = 'Left';
                     }

@@ -19,6 +19,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__; var __extends =
  */
 
 function selectionChange(arg) {
+
     if (arg.state === 'Changing') {
         if (arg.newValue[0] instanceof ej.diagrams.Node) {
             for (var _i = 0, _a = diagram.selectedItems.userHandles; _i < _a.length; _i++) {
@@ -58,7 +59,7 @@ function getNodeDefaults(obj) {
         };
         obj.annotations = [{
             content: obj.data.Label, margin: { left: 10, right: 10, top: 10, bottom: 10 },
-            style: { color: 'white' }
+            style: { color: 'black' }
         }];
         var port1 = getPort();
         for (var i = 0; i < port1.length; i++) {
@@ -180,7 +181,7 @@ var LeftExtendTool = (function (_super) {
                     diagram.add(connector);
                     diagram.doLayout();
                     diagram.bringIntoView(nd.wrapper.bounds);
-                    diagram.startTextEdit(nd);
+                    // diagram.startTextEdit(nd);
                 }
             }
         }
@@ -216,7 +217,7 @@ var RightExtendTool = (function (_super) {
                     diagram.add(connector);
                     diagram.doLayout();
                     diagram.bringIntoView(nd.wrapper.bounds);
-                    diagram.startTextEdit(nd);
+                    // diagram.startTextEdit(nd);
                 }
             }
         }
@@ -324,12 +325,20 @@ function applyHandle(handle, side, offset, margin, halignment, valignment) {
     handle.verticalAlignment = valignment;
 }
 
+    console.log(window.data);
 
-    var items = new ej.data.DataManager(window.data, new ej.data.Query().take(7));
+    window.data = [{
+        "Label": "Creativity",
+        "branch": "Root",
+        "fill": "red",
+        "id": 1
+    }]
+
+    var items = new ej.data.DataManager(window.data);
 
     //initialization of the Diagram.
     diagram = new ej.diagrams.Diagram({
-        width: '100%', height: '550px',
+        width: '100%', height: '950px',
         snapSettings: { constraints: ej.diagrams.SnapConstraints.None },
         tool: ej.diagrams.DiagramTools.SingleSelect,
         layout: {

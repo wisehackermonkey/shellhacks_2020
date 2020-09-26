@@ -360,3 +360,14 @@ function applyHandle(handle, side, offset, margin, halignment, valignment) {
     diagram.appendTo('#diagram');
     // diagram.fitToPage();
 
+    const callNodeInt = () => {
+        // callNodeInt();
+        console.log("test")
+    }
+    
+    var voiceButton = document.getElementById("input");
+    
+    voiceButton.addEventListener("click", callNodeInt());
+
+
+

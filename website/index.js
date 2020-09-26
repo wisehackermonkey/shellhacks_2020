@@ -125,11 +125,11 @@ function getPort() {
     return port;
 }
 
-function addNode() {
+function addNode(title) {
     var obj = {};
     obj.id = ej.diagrams.randomId();
     obj.data = {};
-    obj.data.Label = 'Node';
+    obj.data.Label = title;
     return obj;
 }
 function addConnector(source, target) {
@@ -167,7 +167,7 @@ var LeftExtendTool = (function (_super) {
             var selectedElement = this.commandHandler.getSelectedObject();
             if (selectedElement[0]) {
                 if (selectedElement[0] instanceof ej.diagrams.Node) {
-                    var node = addNode();
+                    var node = addNode(title);
                     if (selectedElement[0].data.branch === 'Root') {
                         node.data.branch = 'Right';
                     }
@@ -203,7 +203,7 @@ var RightExtendTool = (function (_super) {
             var selectedObject = this.commandHandler.getSelectedObject();
             if (selectedObject[0]) {
                 if (selectedObject[0] instanceof ej.diagrams.Node) {
-                    var node = addNode();
+                    var node = addNode(title);
                     if (selectedObject[0].data.branch === 'Root') {
                         node.data.branch = 'Left';
                     }
@@ -338,7 +338,7 @@ function applyHandle(handle, side, offset, margin, halignment, valignment) {
 
     //initialization of the Diagram.
     diagram = new ej.diagrams.Diagram({
-        width: '100%', height: '950px',
+        width: '100%', height: '100%',
         snapSettings: { constraints: ej.diagrams.SnapConstraints.None },
         tool: ej.diagrams.DiagramTools.SingleSelect,
         layout: {

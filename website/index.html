@@ -21,20 +21,43 @@
 
 
     <style>
-      body {
-        touch-action: none;
+      
+      .speechInput {
+          margin-left: 50%;
+          margin-top: 50%;
       }
+
+      .body {
+          overflow: hidden;
+          /* overflow-y: hidden; */
+      }
+
+      #diagram {
+          overflow-x: hidden;
+          overflow-y: hidden;
+      }
+
+
     </style>
+
+
   </head>
   <body>
     <div class="stackblitz-container material">
       <div class="control-section">
-        <div class="content-wrapper" style="width: 100%">
-          <div id="diagram"></div>
+        <div class="content-wrapper" style="width: 100%;height: 800px;">
+          <div id="diagram">
+
+          </div>
         </div>
       </div>
     </div>
+    <div class="speechInput" style="margin-left: 48%;cursor:pointer;margin-top: 2%;" >
 
+        <button style="cursor:pointer;background: url(slice2.png);width: 68px;height: 68px;border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
+        </button>
+
+    </div>
 
     <script src="./index.js">
 

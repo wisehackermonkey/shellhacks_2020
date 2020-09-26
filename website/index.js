@@ -369,10 +369,9 @@ function applyHandle(handle, side, offset, margin, halignment, valignment) {
     var a = document.getElementById("input");
     
     a.addEventListener('click',function(e) {
-        callNode();
+        console.warn("Button was pressed")
         e.preventDefault(); 
-        e.stopPropagation();
-        }, false);i
+        }, false);
 
 
 

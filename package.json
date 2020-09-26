@@ -1,0 +1,27 @@
+{
+  "name": "mindmaper",
+  "version": "1.0.0",
+  "description": "creates mindmaps using speech to text",
+  "main": "./backend/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wisehackermonkey/shellhacks_2020.git"
+  },
+  "keywords": [
+    "mindmap",
+    "speech-to-text"
+  ],
+  "author": "wisehackermonkey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wisehackermonkey/shellhacks_2020/issues"
+  },
+  "homepage": "https://github.com/wisehackermonkey/shellhacks_2020#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "i": "^0.3.6"
+  }
+}

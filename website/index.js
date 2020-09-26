@@ -129,7 +129,7 @@ function addNode(title) {
     var obj = {};
     obj.id = ej.diagrams.randomId();
     obj.data = {};
-    obj.data.Label = title;
+    obj.data.Label = "Node";
     return obj;
 }
 function addConnector(source, target) {
@@ -167,7 +167,7 @@ var LeftExtendTool = (function (_super) {
             var selectedElement = this.commandHandler.getSelectedObject();
             if (selectedElement[0]) {
                 if (selectedElement[0] instanceof ej.diagrams.Node) {
-                    var node = addNode(title);
+                    var node = addNode();
                     if (selectedElement[0].data.branch === 'Root') {
                         node.data.branch = 'Right';
                     }
@@ -203,7 +203,7 @@ var RightExtendTool = (function (_super) {
             var selectedObject = this.commandHandler.getSelectedObject();
             if (selectedObject[0]) {
                 if (selectedObject[0] instanceof ej.diagrams.Node) {
-                    var node = addNode(title);
+                    var node = addNode();
                     if (selectedObject[0].data.branch === 'Root') {
                         node.data.branch = 'Left';
                     }
@@ -334,7 +334,7 @@ function applyHandle(handle, side, offset, margin, halignment, valignment) {
         "id": 1
     }]
 
-    var items = new ej.data.DataManager(window.data);
+    var items = new ej.data.DataManager(window.data,new ej.data.Query().take(7));
 
     //initialization of the Diagram.
     diagram = new ej.diagrams.Diagram({

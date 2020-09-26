@@ -40,7 +40,7 @@
 
     </style>
 
-
+  <script src="js/azure.js"></script>
   </head>
   <body>
     <div class="stackblitz-container material">
@@ -54,13 +54,24 @@
     </div>
     <div class="speechInput" style="margin-left: 48%;cursor:pointer;margin-top: 2%;" >
 
-        <button style="cursor:pointer;background: url(slice2.png);width: 68px;height: 68px;border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;border-bottom-width: 0px;">
+        <button style="cursor:pointer;background: url(slice2.png);width: 68px;height: 68px;border-top-width: 0px;border-left-width: 0px;border-right-width: 0px;border-bottom-width: 0px;" id="startRecognizeOnceAsyncButton">
         </button>
 
     </div>
 
+
+    <div id="content" style="display:none">
+    <table width="100%">
+      <tr>
+        <td><textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea></td>
+      </tr>
+    </table>
+  </div>
+
     <script src="./index.js">
 
     </script>
+  <!-- Speech SDK reference sdk. -->
+  <script src="microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
   </body>
 </html>

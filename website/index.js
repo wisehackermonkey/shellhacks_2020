@@ -431,8 +431,8 @@ var subscriptionKey = "81cdc9587dfc4c9084bf437d917639f8";
     });
 async function fetchAsync () {
   // await response of fetch call
-//   let response = await fetch(`http://localhost:5000/api/nlp/?test=${translation}`);
-  let response = await fetch(`http://localhost:5000/api/nlp/?test=bananas are tasty apples are tasty watermelon is yummy grapes are sweet`);
+  let response = await fetch(`http://localhost:5000/api/nlp/?test=${translation}`);
+//   let response = await fetch(`http://localhost:5000/api/nlp/?test=bananas are tasty apples are tasty watermelon is yummy grapes are sweet`);
   // only proceed once promise is resolved
   let data = await response.json();
   // only proceed once second promise is resolved

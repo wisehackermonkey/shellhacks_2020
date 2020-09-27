@@ -50,7 +50,7 @@ function selectionChange(arg) {
 }
 
 function getNodeDefaults(obj) {
-    obj.constraints = ej.diagrams.NodeConstraints.Default & ~ej.diagrams.NodeConstraints.Drag;
+    obj.constraints = ej.diagrams.NodeConstraints.Default ;
     if (obj.data.branch === 'Left' || obj.data.branch === 'Right' || obj.data.branch === 'Root') {
         obj.shape = { type: 'Basic', shape: 'Ellipse' };
         obj.borderColor = 'black';
@@ -403,6 +403,31 @@ var subscriptionKey = "81cdc9587dfc4c9084bf437d917639f8";
             let translation = result.translations.get(language);
             window.console.log(translation);
             current_text = translation
+
+            tool = new LeftExtendTool(diagram.commandHandler);
+
+            var selectedElement = tool.commandHandler.getSelectedObject();
+            if (selectedElement[0]) {
+                if (selectedElement[0] instanceof ej.diagrams.Node) {
+                    var node = addNode(current_text);
+                    if (selectedElement[0].data.branch === 'Root') {
+                        node.data.branch = 'Right';
+                    }
+                    else if (selectedElement[0].data.branch === 'Right' ||
+                        selectedElement[0].data.branch === 'subRight') {
+                        node.data.branch = 'subRight';
+                    }
+                    var connector = addConnector(selectedElement[0], node);
+                    diagram.clearSelection();
+                    var nd = diagram.add(node);
+                    diagram.add(connector);
+                    diagram.doLayout();
+                    diagram.bringIntoView(nd.wrapper.bounds);
+                    // diagram.startTextEdit(nd);
+                }
+            }
+
+
             phraseDiv.innerHTML += translation;
 
             recognizer.close();

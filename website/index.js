@@ -1,3 +1,5 @@
+let translation;
+
 ej.base.enableRipple(true);
 /*jshint esversion: 6 */
 ej.diagrams.Diagram.Inject(ej.diagrams.DataBinding, ej.diagrams.MindMap, ej.diagrams.HierarchicalTree);
@@ -400,8 +402,9 @@ var subscriptionKey = "81cdc9587dfc4c9084bf437d917639f8";
         recognizer.recognizeOnceAsync(
           function (result) {
             startRecognizeOnceAsyncButton.disabled = false;
-            let translation = result.translations.get(language);
+            translation = result.translations.get(language);
             window.console.log(translation);
+
             current_text = translation
             phraseDiv.innerHTML += translation;
 
@@ -426,4 +429,16 @@ var subscriptionKey = "81cdc9587dfc4c9084bf437d917639f8";
 
       }
     });
+async function fetchAsync () {
+  // await response of fetch call
+  let response = await fetch('http://localhost:5000/api/nlp/?test=${translation}');
+  // only proceed once promise is resolved
+  let data = await response.json();
+  // only proceed once second promise is resolved
+  console.log( data);
+}
+
+fetchAsync() 
+    .then(data => console.log(data))
+    .catch(reason => console.log(reason.message))
 

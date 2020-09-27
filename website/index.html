@@ -22,39 +22,40 @@
     </script> -->
 
 
-    <style>
-      /* #diagram_diagramLayer_svg {
-        height: 300px;
-        width: 400px;
-      } */
-      .speechInput {
-          margin-left: 50%;
-          margin-top: 50%;
-      }
+  <style>
+    /* #diagram_diagramLayer_svg {
+      height: 300px;
+      width: 400px;
+    } */
+    .speechInput {
+        margin-left: 50%;
+        margin-top: 50%;
+    }
 
-      .body {
-          /* overflow: hidden; */
-          /* overflow-y: hidden; */
-      }
+    .body {
+        /* overflow: hidden; */
+        /* overflow-y: hidden; */
+    }
 
-      #diagram {
-          /* overflow-x: hidden;
-          overflow-y: hidden; */
-      }
+    #diagram {
+        /* overflow-x: hidden;
+        overflow-y: hidden; */
+    }
 
-      .navbar {
-        margin-bottom: 0;
-        -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
-        box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
-      }
+  .navbar {
+    margin-bottom: 0;
+    /* -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75); */
+  }
 
 
-      .fa-microphone{
+.fa-microphone{
   color: #FFFFFF;
   background: #dd4b39;
   padding: 0.2em 0.4em;
-  }
+}
+
 .circle{
   border-radius: 60%;
   	margin: 0.15em;
@@ -85,23 +86,70 @@
   background-color:rgb(2,123,255);
 }
 .navbar {
-    position: relative;
+    /* position: relative; */
+    background-color: rgb(2,123,255);
 }
 .navbar-brand {
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     margin-left: -50px !important;  /* 50% of your logo width */
-    display: block;
-    color: White;
+    color: White; 
+  
+}
+.bottom-nav {
+  height: 40px;
+  padding: 10px;
+  line-height: normal;
+  font-size: small;
+  background-color: white;
+  margin-left: 10px;
 }
 
 </style>
 
   <script src="js/azure.js"></script>
   
-  <nav class="navbar navbar-light bg-light" style="background-color: rgb(2,123,255)">
-    <a class="navbar-brand">Some Name/Logo</a>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Audio-Maps</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- Button trigger modal -->
+      
+        <!-- Modal -->
+
+      </div>
+
+
+
+
+
+        <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+      </ul>
+    </div>
   </nav>
+  <div class="bottom-nav">
+    <p>Welcome to Audio-Maps. 
+      Now Lets categorize some Ideas.  </p>
+  </div>
+  <!-- <nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Navbar</a>
+  <div style="display: flex; align-content: flex-end;">
+    <div>hello</div>
+  </div>
+  </form>
+</nav> -->
+  <!-- <nav class="navbar navbar-light bg-light" style="background-color: rgb(2,123,255)">
+    
+    <a class="navbar-brand">Some Name/Logo</a>
+  </nav> -->
   
   </head>
   <body>

@@ -6,7 +6,7 @@
 let express = require('express');
 let app = express();
 let path = require("path")
-let PORT = process.env.PORT || 3000 
+let PORT = process.env.PORT || 3000
 // app.use(express.static('public'));
 // app.use(express.static('images'));
 app.use('/', express.static(path.join(__dirname, '../website/')))
